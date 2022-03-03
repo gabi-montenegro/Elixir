@@ -6,4 +6,4 @@ end
 
 #within same file
 
-IO.puts "The sum of 5 + 5 is: #{inspect S.soma(5, 5)}"
+IO.puts "A soma de 5 + 5 é: #{inspect S.soma(5, 5)}"
