@@ -1,6 +1,6 @@
-require Integer
+
 defmodule Func do   
-    
+    import Integer    
 
     def duplica(l) do
         Enum.map(l, fn x -> x*2 end)
@@ -8,7 +8,7 @@ defmodule Func do
     end
 
     def impar(l) do 
-        Enum.filter(l, fn x -> Integer.is_odd(x) == :true end)
+        Enum.filter(l, fn x -> is_odd(x) == :true end)
     end
 end
 
