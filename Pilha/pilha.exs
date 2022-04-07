@@ -1,23 +1,21 @@
 
 defmodule Pilha do
-    import IO
-        defstruct pilha: []
-        def novaPilha, do: %Pilha{}
-        def push(pilha, elemento) do
-            %Pilha{pilha: [elemento | pilha]}
+        import IO
+        #defstruct pilha: []
+        #def novaPilha, do: %Pilha{}
+        def push(elemento, pilha), do: pilha = [elemento | pilha]        
+        #def pop(pilha: []), do: raise("Stack is empty!")
+        def pop(pilha: [top | rest]) do
+            {top, pilha: rest}
         end
         
-        def pop(%Pilha{pilha: []}), do: raise("Stack is empty!")
-        def pop(%Pilha{pilha: [top | rest]}) do
-            {top, %Pilha{pilha: rest}}
-        end
-        
-        def depth(%Pilha{pilha: pilha}), do: length(pilha)
-        def exibe(%Pilha{pilha: pilha}), do: puts "#{pilha}"
+        def tamanho(pilha: pilha), do: length(pilha)
+        def exibe(pilha: pilha), do: puts pilha
     
 end
 
-
+pilhaOriginal = []
+Pilha.push(2, pilhaOriginal) |> Pilha.tamanho(pilhaOriginal)
 
 
 #Pilha.novaPilha |> Pilha.push(1) |> Pilha.push(2) |> Pilha.exibe()
