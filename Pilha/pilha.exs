@@ -7,9 +7,10 @@ defmodule Pilha do
                 %Pilha{ pilha: [elemento | pilha]}
         end        
         def pop(%Pilha{pilha: [topo | resto]}), do: {topo, %Pilha{pilha: resto}}
-        def pop(lista = %Pilha{pilha: []}), do: {nil, lista.pilha}
-        def topo(lista), do: hd(lista)
+        def pop(p = %Pilha{pilha: []}), do: {nil, p.pilha}
+        def topo(p), do: hd(p)
         def tamanho(%Pilha{pilha: pilha}), do: length(pilha)
+        def inverteElementos(p = %Pilha{pilha: pilha}), do: Enum.reverse(p.pilha)
         
     
 end
@@ -24,8 +25,7 @@ top = Pilha.topo(pilhaOriginal.pilha)
 {^top, pilhaOriginal} = Pilha.pop(pilhaOriginal) #pattern matching
 IO.puts "#{inspect pilhaOriginal.pilha}"
 IO.puts "#{inspect Pilha.tamanho(pilhaOriginal)}"
-
-
+IO.puts "#{inspect Pilha.inverteElementos(pilhaOriginal)}"
 
 
 
