@@ -21,8 +21,7 @@ defmodule Pilha do
     
 end
 
-pilhaOriginal = Pilha.novaPilha
-pilhaOriginal = pilhaOriginal |> Pilha.push(2) |> Pilha.push(3) |> Pilha.push(4)
+pilhaOriginal = Pilha.novaPilha |> Pilha.push(2) |> Pilha.push(3) |> Pilha.push(4)
 IO.puts "#{inspect pilhaOriginal.pilha}"
 
 
